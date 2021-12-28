@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Comments</title>
+</head>
+<body style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
+    <ul style="list-style-type:none; margin-top: 4em; margin-bottom: 5em;">
+        <%for(c of comments){%>
+            <li style="margin: 1em 0; font-size: 1.25em;"> 
+                <%=c.comment%>-<b><%=c.username%></b>
+                <a style="font-size: 0.75em;margin-left: 1em; text-decoration: none; color: rgb(20, 84, 221);" href="/comments/<%=c.id%>">Deatils</a>
+            </li>
+        <%}%>
+    </ul>
+    <a style="text-decoration: none; margin-left: -50em; color: rgb(20, 84, 221);" href="/comments/new">Make a new Comment</a>
+</body>
+</html>
