@@ -64,6 +64,6 @@ app.get('/comments/:id',(req,res)=>
 {
     const {id} = req.params;
     console.log(id);
-    const comm = comments.find(c => c.id=== id);
-    res.render('comments/show',{id,comm});
+    const commen = comments.find(c => c.id=== id);
+    res.render('comments/show',{id,commen});
 })
