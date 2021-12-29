@@ -74,7 +74,9 @@ app.patch('/comments/:id',(req,res)=>
     foundComment.comment = newCommentText;
     res.redirect('/comments');
 })
-app.get('/tacos',(req,res)=>
+app.get('/comments/:id/edit',(req,res)=>
 {
-    res.send('Get Response');
+    const {id} = req.params;
+    const commen = comments.find(c=>c.id === id);
+    res.render('comments/edit',{commen});
 })
