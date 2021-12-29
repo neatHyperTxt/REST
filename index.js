@@ -21,7 +21,6 @@ const comments = [
         id:uuid()
     }
 ]
-
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.set('view engine','ejs');
@@ -66,4 +65,16 @@ app.get('/comments/:id',(req,res)=>
     console.log(id);
     const commen = comments.find(c => c.id=== id);
     res.render('comments/show',{id,commen});
+})
+app.patch('/comments/:id',(req,res)=>
+{
+    const {id} = req.params;
+    const newCommentText = req.body.comment;
+    const foundComment = comments.find((c)=>c.id === id);  
+    foundComment.comment = newCommentText;
+    res.redirect('/comments');
+})
+app.get('/tacos',(req,res)=>
+{
+    res.send('Get Response');
 })
