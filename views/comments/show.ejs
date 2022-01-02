@@ -8,7 +8,10 @@
 </head>
 <body style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
     <h1>Comment id: <%=id%></h1>
-    <h2 style="font-weight: 300;"><%=commen.comment%>- <b><%=commen.username%></b> </h2>
-    <a style="text-decoration: none; color: rgb(13, 132, 201);" href="/comments">See All Comments</a>
+    <a style="margin-top: 2em; text-decoration: none; color: rgb(13, 132, 201);" href="/comments">See All Comments</a>
+    <a style="margin-top:2em; text-decoration: none; margin-left: 2em; color: rgb(13, 132, 201);" href="/comments/<%=commen.id%>/edit">Edit Comment</a>
+    <form method="POST" action="/comments/<%=commen.id%>?_method=DELETE">
+        <button>Delete</button>
+    </form>
 </body>
 </html>
